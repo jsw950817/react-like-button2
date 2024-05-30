@@ -6,16 +6,17 @@ import { useState } from "react";
 function App() {
   const [like, setLike] = useState(false);
 
-  const like반전 = () => setLike(!like);
+  const onClick = () => setLike((prev) => !prev);
   
-  let likeButton = <button onClick={like반전}>좋아요</button>;
-  if (like === true) {
-    likeButton = <button onClick={like반전}>좋아요 취소</button>;
-  }
+  const 좋아요또는취소버튼 = like ? (
+  <button onClick={onClick}>좋아요 취소</button>
+  ) : (
+  <button onClick={onClick}>좋아요</button>
+  )
   return (
     <div>
-      <h1>좋아요 버튼 만들기</h1>
-      {likeButton}
+      <h1>좋아요/싫어요 버튼 구현</h1>
+      {좋아요또는취소버튼}
     </div>
   );
 }

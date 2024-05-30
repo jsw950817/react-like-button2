@@ -14,7 +14,7 @@ function App() {
       // 싫어요 안 누른 상태로 바꿔줘야지
       setDislike(false);
     }
-    setLike(true);
+    setLike(!like); //true로 하면 안 됨
   };
   const onclickDislike = () => {
     //여기는 싫어요 버튼을 클릭했을 때 실행되는 코드들인데,
@@ -23,7 +23,7 @@ function App() {
       //좋아요 안 누른 상태로 바꿔줘야지
       setLike(false);
     }
-    setDislike(true);
+    setDislike(!dislike); //ture로 하면 안 됨
   };
 
   const 좋아요또는취소버튼 = like ? (
